@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pyramide des Tests – Association de cas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header>
+    <h1>🔺 Pyramide des Tests – Étape 1</h1>
+    <p>Faites glisser chaque <strong>cas de test</strong> dans la <strong>bonne catégorie</strong> ci-dessous.</p>
+</header>
+
+<main>
+    <!-- Étape 1 – Classification des cas -->
+    <section class="grid-layout">
+        <div class="dropzone" data-type="unit">🟢 Tests unitaires</div>
+        <div class="dropzone" data-type="performance">🔴 Tests de performance</div>
+        <div class="dropzone" data-type="security">🔴 Tests de sécurité</div>
+        <div class="dropzone" data-type="exploratory">🔴 Tests exploratoires</div>
+    </section>
+
+    <section class="cards-container">
+        <!-- Les cartes seront injectées dynamiquement -->
+    </section>
+
+    <div class="button-container">
+        <button onclick="validateMatches()">Valider</button>
+        <p id="feedback" class="feedback-msg"></p>
+    </div>
+
+    <!-- Étape 2 – Combinaison de cas -->
+    <section id="integration-section" style="display: none; margin-top: 60px;">
+        <h2>🔄 Associez deux cas de test pour former un scénario plus complet</h2>
+        <p>Faites glisser les tests unitaires dans les emplacements ci-dessous.</p>
+
+        <div class="integration-zone">
+            <div class="pair-slot" data-combination="add-mul">
+                <h3>Scénario A</h3>
+                <div class="drop-area" data-slot="1a">Emplacement 1</div>
+                <div class="drop-area" data-slot="1b">Emplacement 2</div>
+            </div>
+            <div class="pair-slot" data-combination="sub-div">
+                <h3>Scénario B</h3>
+                <div class="drop-area" data-slot="2a">Emplacement 1</div>
+                <div class="drop-area" data-slot="2b">Emplacement 2</div>
+            </div>
+        </div>
+
+        <button class="validate-btn" onclick="validateIntegration()">Valider les scénarios</button>
+        <p id="integration-feedback" class="feedback-msg"></p>
+    </section>
+
+    <!-- Étape 3 – Question finale à choix multiple -->
+    <section id="question-type-section" style="display: none; margin-top: 40px;">
+        <h3>🧠 Selon vous, quel est le type de test représenté par ces combinaisons ?</h3>
+        <form id="type-form">
+            <label><input type="checkbox" name="type" value="unit"> Test unitaire</label><br>
+            <label><input type="checkbox" name="type" value="performance"> Test de performance</label><br>
+            <label><input type="checkbox" name="type" value="integration"> Test d’intégration</label><br>
+            <label><input type="checkbox" name="type" value="exploratory"> Test exploratoire</label><br><br>
+            <button type="button" onclick="submitTypeAnswer()">Valider votre réponse</button>
+            <p id="type-feedback" class="feedback-msg"></p>
+        </form>
+    </section>
+</main>
+
+<script src="scripts.js"></script>
+</body>
+</html>
