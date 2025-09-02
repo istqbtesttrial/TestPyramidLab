@@ -168,6 +168,32 @@ function setupDropZones() {
     });
 }
 
+function setupTooltips() {
+    const triggers = document.querySelectorAll('.tooltip-icon[data-tooltip]');
+    triggers.forEach(trigger => {
+        let tooltip;
+        const show = () => {
+            tooltip = document.createElement('div');
+            tooltip.className = 'tooltip-box';
+            tooltip.textContent = trigger.getAttribute('data-tooltip');
+            document.body.appendChild(tooltip);
+            const rect = trigger.getBoundingClientRect();
+            tooltip.style.left = `${rect.left + window.scrollX}px`;
+            tooltip.style.top = `${rect.bottom + window.scrollY + 4}px`;
+        };
+        const hide = () => {
+            if (tooltip) {
+                tooltip.remove();
+                tooltip = null;
+            }
+        };
+        trigger.addEventListener('mouseenter', show);
+        trigger.addEventListener('focus', show);
+        trigger.addEventListener('mouseleave', hide);
+        trigger.addEventListener('blur', hide);
+    });
+}
+
 function validateMatches() {
     const zones = document.querySelectorAll('.dropzone');
     let correctMatches = 0;
@@ -215,6 +241,7 @@ function validateMatches() {
 
 renderCards();
 setupDropZones();
+setupTooltips();
 // Fonction d’affichage de la section 2
 function showIntegrationSection() {
     const section = document.getElementById("integration-section");
