@@ -231,3 +231,14 @@ button:hover {
     z-index: 1000;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
+.back-nav { text-align: left; margin-bottom: 10px; }
+.back-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #764ba2;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.back-btn:hover { background: #5e3f8d; }
