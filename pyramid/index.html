@@ -14,6 +14,24 @@
 </header>
 
 <main>
+    <section class="intro-pyramid" aria-labelledby="intro-title">
+        <h2 id="intro-title">Comprendre la pyramide des tests</h2>
+        <div class="pyramid-graphic" role="img" aria-label="Représentation des tests du plus précis au plus complet">
+            <div class="layer e2e">
+                <h3>Tests de bout en bout</h3>
+                <p>Couverture fonctionnelle maximale, feedback lent, coût de maintenance élevé.</p>
+            </div>
+            <div class="layer integration">
+                <h3>Tests d’intégration</h3>
+                <p>Bonne couverture fonctionnelle, feedback modéré, coût de maintenance moyen.</p>
+            </div>
+            <div class="layer unit">
+                <h3>Tests unitaires</h3>
+                <p>Feedback rapide, faible coût de maintenance, couverture fonctionnelle ciblée.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Étape 1 – Classification des cas -->
     <section class="grid-layout">
         <div class="dropzone" data-type="unit">🟢 Tests unitaires</div>

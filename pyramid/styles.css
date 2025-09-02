@@ -19,6 +19,47 @@ main {
     margin: auto;
 }
 
+/* Section introductive pyramid */
+.intro-pyramid {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pyramid-graphic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pyramid-graphic .layer {
+    color: #fff;
+    padding: 20px 10px;
+    border-radius: 4px;
+}
+
+.pyramid-graphic .e2e {
+    background-color: #e57373;
+    width: 40%;
+}
+
+.pyramid-graphic .integration {
+    background-color: #64b5f6;
+    width: 60%;
+}
+
+.pyramid-graphic .unit {
+    background-color: #81c784;
+    width: 80%;
+}
+
+@media (max-width: 600px) {
+    .pyramid-graphic .e2e { width: 70%; }
+    .pyramid-graphic .integration { width: 85%; }
+    .pyramid-graphic .unit { width: 100%; }
+}
+
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
